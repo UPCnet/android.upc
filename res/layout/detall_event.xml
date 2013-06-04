@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10px"
+            android:paddingRight="10px" >
+
+            <TextView
+                android:id="@+id/event_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:text="Event_Title"
+                android:textColor="@color/detall_event_titol"
+                android:textSize="@dimen/detall_event_titol"
+                android:textStyle="bold" />
+            <View   android:id="@+id/firstDivider"
+        android:layout_height="2dp"
+        android:layout_width="fill_parent"
+        android:background="#000080" />
+            
+            
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:paddingTop="10px">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_schedule_label1"
+                    android:textColor="@color/detall_event_text_fixe"
+                    android:textSize="@dimen/detall_event_text_fixe" />
+
+                <TextView
+                    android:id="@+id/event_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N/A"
+                    android:textColor="@color/detall_event_text_dinamic"
+                    android:textSize="@dimen/detall_event_text_dinamic" android:paddingLeft="5px"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_schedule_label2"
+                    android:textColor="@color/detall_event_text_fixe"
+                    android:textSize="@dimen/detall_event_text_fixe" />
+
+                <TextView
+                    android:id="@+id/event_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N/A"
+                    android:textColor="@color/detall_event_text_dinamic"
+                    android:textSize="@dimen/detall_event_text_dinamic" android:paddingLeft="5px"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:paddingTop="10px">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_location_label"
+                    android:textColor="@color/detall_event_text_fixe"
+                    android:textSize="@dimen/detall_event_text_fixe" />
+
+                <TextView
+                    android:id="@+id/event_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_location_not_found"
+                    android:textColor="@color/detall_event_text_dinamic"
+                    android:textSize="@dimen/detall_event_text_dinamic" android:paddingLeft="5px"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/event_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_desc_not_found"
+                android:textColor="@color/detall_event_text_dinamic"
+                android:textSize="@dimen/detall_event_text_dinamic" android:layout_marginTop="20px"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_link_label"
+                android:textColor="@color/detall_event_text_fixe"
+                android:textSize="@dimen/detall_event_text_fixe" android:layout_marginTop="20px"/>
+
+            <TextView
+                android:id="@+id/event_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="@string/event_link_not_found"
+                android:textColor="@color/detall_event_text_dinamic"
+                android:textColorLink="@color/detall_event_text_dinamic"
+                android:textSize="@dimen/detall_event_text_dinamic" android:layout_marginTop="10px"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

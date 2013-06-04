@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+    <color name="menu_icontext">#000000</color>
+    <color name="event_list_background">#f1f1f1</color>
+    <color name="list_item_pressed_background">#dfdfdf</color>
+    <color name="event_list_separator">#d6d6d6</color>       
+    <color name="event_listtitle">#666666</color>
+    <color name="event_listsubitem">#000333</color>
+    <color name="detall_event_titol">#0000FF</color>
+    <color name="detall_event_text_fixe">#0000FF</color>
+    <color name="detall_event_text_dinamic">#000000</color>
+      <color name="textHeader">#000000</color>
+    </resources>

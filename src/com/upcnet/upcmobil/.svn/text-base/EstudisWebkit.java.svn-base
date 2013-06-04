@@ -1,0 +1,100 @@
+package com.upcnet.upcmobil;
+
+import android.net.http.SslError;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+
+public class EstudisWebkit extends MyActivity {
+
+
+	WebView myWebView;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.estudis_webkit);
+
+		Bundle extras = getIntent().getExtras();
+
+
+		if (extras != null) {
+			String url = extras.getString(Utils.PREF_URL);
+			TextView header = (TextView) findViewById(R.id.textWebkitHeader);
+
+			header.setText(extras.getString(Utils.PREF_TITOL));
+			//header.setShadowLayer(5, 0, 0, 40000000);
+			myWebView = (WebView) findViewById(R.id.estudisWebView);
+			myWebView.getSettings().setJavaScriptEnabled(true);
+			myWebView.setWebViewClient(new WebViewClient() {
+				 public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error) {
+				 handler.proceed();
+				 }
+				});
+
+			myWebView.loadUrl(url);
+
+			//myWebView.setWebViewClient(new HelloWebViewClient());
+
+		}
+		else {
+
+			Toast.makeText(this, getResources().getString(R.string.error_webservice_network), Toast.LENGTH_LONG).show();
+
+
+			finish();
+		}
+
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+
+
+	}
+	@Override
+	public void onResume(){
+		super.onResume();
+
+
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+
+
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if ((keyCode == KeyEvent.KEYCODE_BACK) && myWebView.canGoBack()) {
+			myWebView.goBack();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
+	private class HelloWebViewClient extends WebViewClient {
+		@Override
+		public boolean shouldOverrideUrlLoading(WebView view, String url) {
+			view.loadUrl(url);
+			return true;
+		}
+
+		public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+			Toast.makeText(EstudisWebkit.this, "Oh no! " + description, Toast.LENGTH_SHORT).show();
+		}
+	}
+
+
+
+
+}

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/IUPC/!svn/ver/28/trunk/iUPC/res/menu
+END
+mainaboutoption.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/IUPC/!svn/ver/28/trunk/iUPC/res/menu/mainaboutoption.xml
+END
+eventssyncoption.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/IUPC/!svn/ver/28/trunk/iUPC/res/menu/eventssyncoption.xml
+END
+eventsdetalloption.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/IUPC/!svn/ver/28/trunk/iUPC/res/menu/eventsdetalloption.xml
+END
+eventsaddcalendar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/IUPC/!svn/ver/28/trunk/iUPC/res/menu/eventsaddcalendar.xml
+END

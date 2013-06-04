@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UPC</string>
+    <string name="menu_graus">Graus</string>
+    <string name="menu_videos">Vídeos</string>
+    <string name="menu_mapes">Mapes</string>
+    <string name="events_menu_add_calendar">Afegir a l\'agenda</string>
+    <string name="menu_esdeveniments">AgendaUPC</string>
+    <string name="menu_atenea">Atenea</string>
+    <string name="menu_masters">Màsters universitaris</string>
+    <string name="error_events_connection">No s\'ha pogut connectar amb el servidor, prova-ho un altre cop en uns instants</string>
+    <string name="loading">Carregant...</string>
+    <string name="load_agenda">Descarregant els actes</string>
+    <string name="event_location_label">ubicació:</string>
+    <string name="event_schedule_label1">De </string>
+    <string name="event_schedule_label2"> a </string>
+    <string name="event_link_label">Més informació: </string>
+    <string name="main_menu_item_about">UPC</string>
+    <string name="main_menu_item_home">Home</string>
+    <string name="events_menu_item_refresh">Actualitzar</string>
+    <string name="events_nodata">No s\'han obtingut actes.</string>
+    <string name="event_location_not_found">No especificat.</string>
+    <string name="event_desc_not_found">Sense detalls.</string>
+    <string name="event_link_not_found">No disponible.</string>
+    <string name="upc_events_title">Agenda UPC</string>
+    <string name="event_last_update_1">Actualitzat fa </string>
+    <string name="event_last_updated_na">Dades no actualitzades</string>
+    <string name="events_today">Avui</string>
+    <string name="events_tomorrow">Demà</string>
+    <string name="events_other">Propers esdeveniments</string>
+    <string name="updated">Actualitzat fa un moment</string>
+    <string name="minutes">minuts</string>
+    <string name="minute">minut</string>
+    <string name="hours">hores</string>
+    <string name="hour">hora</string>
+    <string name="seconds">segons</string>
+    <string name="second">segon</string>
+    <string name="days">dies</string>
+    <string name="day">dia</string>
+    <string name="date_hour"> a les </string>
+    <string name="network_na">Connexió no disponible</string>
+    <string name="search_box">Busca als campus de la UPC</string>
+    <string name="button_submit_view">Visualitza a UPCmaps</string>
+    <string name="error_npi">No ha estat possible fer aquesta operació.</string>
+    <string name="error_webservice">Error obtenint les dades del servidor, prova-ho un altre cop en uns instants</string>
+    <string name="error_webservice_network">Error connectant amb el servidor, prova-ho un altre cop en uns instants</string>
+    <string name="error_actualitzant">Error baixant les dades</string>
+    <string name="ok_actualitzant">Dades actualitzades correctament</string>
+    <string name="connexion_needed">És necessària una connexió a Internet per aquesta funcionalitat</string>
+<!--     Prod keystore2 URI -->
+    <string name="google_api_key">0ZcRCYehHH7o26NuD-Ft9rRMI0qOTEfRBDq6c1Q</string>
+
+    <!--
+    Prod keystore debug - URI 
+    <string name="google_api_key">0ZcRCYehHH7pZRXT37kglc9V_VNWaV_27x-QdeA</string>
+    -->
+    <string name="edificiGrauTitol">Grau</string>
+    <string name="edificiUnitats">Unitats</string>
+    <string name="campusGrauTitol">Centres propis</string>
+    <string name="campus2nCicleTitol">Centres adscrits</string>
+    <string name="edifici2nCicleTitol">2n cicle</string>
+    <string name="edificiDoblesTitol">Dobles titulacions</string>
+    <string name="comanar">Com anar-hi</string>
+    <string name="addcontact">Afegir Contacte</string>
+    <string name="compartirubicacio">Compartir ubicació</string>
+    <string name="sharelocation">Utilitzar..</string>
+    <string name="about_version">versió 1.0</string>
+    <string name="about_info">La <b>Universitat Politècnica de Catalunya · BarcelonaTech (UPC)</b> ofereix estudis de grau i màster universitari dels àmbits de l\'arquitectura, les ciències i l\'enginyeria.</string>
+    <string name="about_infolist">- Consulta la informació acadèmica dels estudis UPC per al curs 2012-2013.\n- Utilitza l\'aplicació UPCmaps per arribar als nostres espais.\n- Coneix la nostra activitat  a través dels vídeos.</string>
+    <string name="about_contacte">Per a qualsevol consulta:\ninfo@upc.edu\n+34 93 401 62 00 \nwww.upc.edu</string>
+
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+          android:constantSize="true" >
+   <item android:state_selected="true">
+    <shape android:shape="rectangle"    >
+        <corners android:radius="10dp" />
+      <solid android:color="#dfdfdf"
+      />
+      <stroke android:width="3dp" android:color="#c5c5c5"/>
+      <padding android:left="10dp"
+               android:top="10dp"
+               android:right="10dp"
+               android:bottom="10dp" /> 
+    </shape> 
+  </item>  
+   <item android:state_focused="true" >
+      
+    <shape android:shape="rectangle">
+        <corners android:radius="10dp" />
+      <solid android:color="#dfdfdf"/>
+      <!-- stroke android:width="3dp" android:color="#F9C11E"/> -->
+      <padding android:left="10dp"
+               android:top="10dp"
+               android:right="10dp"
+               android:bottom="10dp" />
+    </shape>
+  </item>
+  <item android:state_pressed="true">
+    <shape android:shape="rectangle">
+           <corners android:radius="10dp" />
+      <solid android:color="#dfdfdf"/>
+      <stroke android:width="3dp" android:color="#c5c5c5"/>
+      <padding android:left="10dp"
+               android:top="10dp"
+               android:right="10dp"
+               android:bottom="10dp" />
+    </shape>
+  </item>
+    <item android:state_selected="true" android:state_pressed="true">
+    <shape android:shape="rectangle">
+           <corners android:radius="10dp" />
+      <solid android:color="#dfdfdf"/>
+      <stroke android:width="3dp" android:color="#c5c5c5"/>
+      <padding android:left="10dp"
+               android:top="10dp"
+               android:right="10dp"
+               android:bottom="10dp" />
+    </shape>
+  </item>
+      <item android:state_focused="true" android:state_pressed="true">
+    <shape android:shape="rectangle">
+           <corners android:radius="10dp" />
+      <solid android:color="#dfdfdf"/>
+      <stroke android:width="3dp" android:color="#c5c5c5"/>
+      <padding android:left="10dp"
+               android:top="10dp"
+               android:right="10dp"
+               android:bottom="10dp" />
+    </shape>
+  </item>
+  <item>
+    <shape android:shape="rectangle">
+           <corners android:radius="10dp" />
+      <solid android:color="#00000000"/>
+   
+      <padding android:left="10dp"
+               android:top="10dp"
+               android:right="10dp"
+               android:bottom="10dp" />
+    </shape>
+  </item>
+</selector>

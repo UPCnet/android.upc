@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/event_list_background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/upcheader_events" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="399dp"
+        android:layout_weight="2.55"   
+        android:background="@color/event_list_background"  
+        android:cacheColorHint="#00000000"   
+        android:listSelector="@drawable/background_menu_list" />
+
+
+    <TextView
+        android:id="@+id/android:empty"
+        android:layout_width="wrap_content"
+        android:layout_height="399dp"
+        android:layout_weight="2.55"
+        android:text="@string/events_nodata" />
+    
+    <ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@android:drawable/divider_horizontal_dark"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scaleType="fitXY"
+/>
+    
+
+    <RelativeLayout
+        android:id="@+id/relLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp" 
+        android:background="@color/event_list_separator" >
+
+        <ProgressBar
+            android:id="@+id/progressUpdate"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/last_updated" />
+
+        <TextView
+            android:id="@+id/last_updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="last updated not found" android:textColor="@android:color/black"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,222 @@
+package com.upcnet.upcmobil;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.ListActivity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+
+public class EstudisActivity extends ListActivity {
+
+	private static final String LOGTAG = "EstudisTAG";
+	private static final String WS_AMBIT_URL = "http://alderamin1.upc.es/ambit_list_ws.php";
+	private int flagBBDD = 0; // 0 = normal 1 = estem baixant dades 2 = tancar dps de guardar dades
+	EstudisDbAdapter myDbHelper;
+
+	private static final int INVISIBLE = 4;
+	private static final int VISIBLE = 0;
+	private ProgressBar updateStatus;
+	private TextView updateInfo;
+
+	private final Handler handler = new Handler() {
+		@Override
+		public void handleMessage(final Message msg) {
+			
+
+			//URI: Control d'errors
+			if (msg.what == 0) {			
+
+				
+				if (flagBBDD != 2) {
+					fillData();
+					updateStatus.setVisibility(INVISIBLE);
+					flagBBDD = 0;
+				}
+				else {
+					// Si flagBBDD = 2, hem sortit de l'activity, tanquem BBDD i no refresquem
+					Log.v("BBDD", "TANQUEM");
+					myDbHelper.close();
+				}
+				
+			}
+			else {
+				Toast.makeText(EstudisActivity.this,getString(R.string.error_actualitzant), Toast.LENGTH_LONG).show();
+
+				updateStatus.setVisibility(INVISIBLE);
+				
+			
+			}
+
+
+		}
+	};   
+	
+	
+
+	final ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.listplaceholder);
+
+		updateInfo = (TextView) findViewById(R.id.last_updated);
+		updateStatus = (ProgressBar) findViewById(R.id.progressUpdate);
+
+		updateStatus.setVisibility(INVISIBLE);
+		updateInfo.setText("Last Updated..");
+
+		myDbHelper = new EstudisDbAdapter(this.getApplicationContext());
+	
+
+
+	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
+		
+		Log.v("BBDD", "OBRIM");
+		myDbHelper.open();
+
+		fillData();
+		saveData();
+	
+
+		//fillData();
+		
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		Log.v("BBDD", "ONsTOP: "+ flagBBDD);
+		if (flagBBDD != 1) {
+			Log.v("BBDD", "TANQUEM");
+			myDbHelper.close();
+		
+		} else  {
+			flagBBDD=2;
+		}
+
+
+	}
+
+	private void saveData() {
+		if (Utils.isNetworkAvailable(getApplicationContext())) {
+			updateStatus.setVisibility(VISIBLE);
+			//executem en asyntask el get del JSON
+		
+
+			new Thread() {
+
+				@Override
+				public void run(){
+					//updateStatus = (ProgressBar) findViewById(R.id.map_loading);
+					//updateStatus.setVisibility(VISIBLE);
+					// Inici paste JSON
+					flagBBDD=1;
+
+
+
+					JSONObject json = JSONfunctions.getJSONfromURL(WS_AMBIT_URL);
+					//        JSONObject json = JSONfunctions.getJSONfromURL("http://alderamin1.upc.es/estudis_grau.php");
+
+					try{
+
+						JSONArray  estudis_array = json.getJSONArray("ambit_estudis");
+						if (estudis_array.length()>0) {
+							myDbHelper.resetAmbits();
+							
+							for(int i=0;i<estudis_array.length();i++){						
+								//HashMap<String, String> map = new HashMap<String, String>();	
+								JSONObject e = estudis_array.getJSONObject(i);
+								//map.put("id",  String.valueOf(i));
+								//map.put("nom_cat",  e.getString("nom_cat"));
+								//map.put("id_ambit",e.getString("id_ambit"));
+								myDbHelper.insertAmbit(e.getString("nom_cat"), Integer.parseInt(e.getString("id_ambit")));
+								//mylist.add(map);			
+							}		
+							
+							handler.sendEmptyMessage(0);
+							
+						}
+					}catch(Exception e)        {
+						Log.e("log_tag", "Error parsing data "+e.toString());
+					}
+
+				}
+
+			}.start();
+		}
+
+
+	}
+	private void fillData() {
+
+		final Cursor myCursor = myDbHelper.fetchAllAmbits();
+		if (myCursor != null) {
+			startManagingCursor(myCursor);
+			myCursor.moveToFirst();
+			String[] data = new String[] {EstudisDbAdapter.EST_A_NOM};
+
+			int[] to = new int[] {R.id.item_title};
+			SimpleCursorAdapter events = new SimpleCursorAdapter(EstudisActivity.this,R.layout.estudis,myCursor,data,to);
+			//	myCursor.moveToFirst();
+			//	Log.v("BBDD_CURSOR",myCursor.getString(1));
+
+			setListAdapter(events);
+
+			final ListView lv = getListView();
+			lv.setTextFilterEnabled(true);	
+			lv.setOnItemClickListener(new OnItemClickListener() {
+				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {        		
+					//	@SuppressWarnings("unchecked")
+					Intent i = new Intent(EstudisActivity.this, AmbitSeleccionat.class);
+					// Pasamos el parametro id_ambit mediante el Bundle a la actividad i
+					Bundle bundle = new Bundle();
+					myCursor.moveToPosition(position);
+
+					bundle.putInt("id_ambit", myCursor.getInt(myCursor.getColumnIndexOrThrow(EstudisDbAdapter.EST_A_ID_AMBIT)));
+					i.putExtras(bundle);
+					startActivity(i);
+
+				}
+			});	
+
+		}
+		else {
+			Log.e(LOGTAG, "BBDD Error");
+		}
+
+		/*ListAdapter adapter = new SimpleAdapter(this, mylist , R.layout.estudis, 
+				new String[] { "nom_cat"}, 
+				new int[] { R.id.item_title});
+		 /*new String[] { "nom_cat","id_ambit" }, 
+                   new int[] { R.id.item_title, R.id.item_subtitle});*/
+
+		//setListAdapter(adapter);
+	}
+
+	
+}

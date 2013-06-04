@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menu_icontextsize">14sp</dimen>
+    <dimen name="detall_event_titol">16sp</dimen>
+    <dimen name="detall_event_text_fixe">14sp</dimen>
+    <dimen name="detall_event_text_dinamic">14sp</dimen>
+</resources>

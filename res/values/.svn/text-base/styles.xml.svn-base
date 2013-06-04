@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MainHeader">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">22dp</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:color">#000000</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="unitatCaixa">
+        <item name="android:background">@drawable/background_box</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">5</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:color">#000000</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:layout_margin">6dp</item>
+    </style>
+
+
+    <style name="unitatCaixaGris">
+        <item name="android:background">@drawable/background_box_gris</item>
+        <item name="android:shadowColor">#ff000000</item>
+  
+        <item name="android:color">#000000</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:layout_margin">6dp</item>
+    </style>
+
+    <style name="unitatLlista">
+        <item name="android:background">@drawable/background_box_single</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:color">#000000</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingRight">1dp</item>
+        <item name="android:paddingBottom">1dp</item>
+        <item name="android:paddingLeft">1dp</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="unitatTitol">
+        <item name="android:color">#ff000000</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:textColor">#ff000000</item>
+        <!-- item name="android:padding">5dp</item -->
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="unitatAdress">
+        <item name="android:color">#ff000000</item>
+        <item name="android:textColor">#ff000000</item>
+        <!-- item name="android:padding">5dp</item -->
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="unitatNegreta">
+        <item name="android:color">#ff000000</item>
+        <item name="android:textColor">#ff000000</item>
+        <!-- item name="android:padding">5dp</item -->
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+<style name="unitatNoNegreta">
+        <item name="android:color">#ff000000</item>
+        <item name="android:textColor">#ff000000</item>
+        <!-- item name="android:padding">5dp</item -->
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+        
+    <style name="unitatNegretaEstudis">
+        <item name="android:color">#ff000000</item>
+        <item name="android:textColor">#ff000000</item>
+        <!-- item name="android:padding">5dp</item -->
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+</resources>

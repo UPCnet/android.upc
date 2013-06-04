@@ -1,0 +1,232 @@
+package com.upcnet.upcmobil;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
+import com.google.android.maps.MapView;
+import com.google.android.maps.Overlay;
+import com.google.android.maps.OverlayItem;
+
+//LINK per la llista + checkbox:http://appfulcrum.com/2010/09/12/listview-example-3-simple-multiple-selection-checkboxes/
+
+
+
+public class MapsActivity extends MyMapActivity {
+
+	MapView mapView; 
+	MapController mc;
+	GeoPoint p;
+	TextView loadText;
+	ProgressBar updateStatus;
+
+	private static final int INVISIBLE = 4;
+	private static final int VISIBLE = 0;
+	private static final String WS_MAPS_URL = "http://nucli.upc.edu/ws/InfoLocalitatsv1.php";
+	//private static final String WS_MAPS_URL = "http://alderamin1.upc.es/campusWebService.php";
+	public static final String SEARCH_PREF = "SearchMap";
+	public static final String CAMPUS_PREF = "campusDemanat";
+
+	static final String WS_NOM ="nom";
+	//static final String WS_LOCALITAT ="localitat";
+
+	static final String WS_ID = "id";
+	static final String WS_COORDS = "coord";
+	static final String WS_LAT = "lat";
+	static final String WS_LON = "lon";
+	
+	
+	private EditText searchBox;
+	TextView textLoading;
+	ProgressBar iconLoading;
+	
+	
+	
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.map_root_search);
+		mapView = (MapView) findViewById(R.id.mapView);
+		mapView.setBuiltInZoomControls(true);
+		searchBox = (EditText) findViewById(R.id.searchET);
+		textLoading = (TextView) findViewById(R.id.searchLodading);
+		iconLoading = (ProgressBar) findViewById(R.id.searchProgressBar);
+
+		
+		TextView.OnEditorActionListener autoSearchSubmit = new TextView.OnEditorActionListener() {
+			public boolean onEditorAction(TextView editSearch, int actionId, KeyEvent event) {
+				if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_UNSPECIFIED || actionId == EditorInfo.IME_ACTION_SEARCH) {
+					submit_search();
+					//Toast.makeText(MapsActivity.this,"Submit", Toast.LENGTH_LONG).show();
+				}
+				return true;
+			}
+		};
+		findViewById(R.id.imageSearch1).setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				try {
+					submit_search();
+
+				} catch (Exception e) {
+					Log.e("SampleApp", "Failed to invoke call", e);
+				}
+			}	   
+		});
+		
+		
+		searchBox.setOnEditorActionListener(autoSearchSubmit);
+
+		new PrintNewPoints().execute(WS_MAPS_URL);
+
+		//
+		
+		
+
+
+
+	}
+
+	private void submit_search() {
+		
+		Intent i = new Intent(this,SearchMaps.class);
+		Bundle bundle = new Bundle();
+
+		bundle.putString(SEARCH_PREF, searchBox.getText().toString());
+		i.putExtras(bundle);
+
+		startActivity(i);
+	}
+	
+	@Override
+	protected boolean isRouteDisplayed() {
+		return false;
+	}
+
+	class PrintNewPoints extends AsyncTask<String,Integer,Long> {
+
+		private ArrayList<OverlayItem> mylist;
+		private JSONArray campusPoints;
+		@Override
+		protected Long doInBackground(String... url) {
+
+			updateStatus = (ProgressBar) findViewById(R.id.map_loading);
+			updateStatus.setVisibility(VISIBLE);
+			// Inici paste JSON
+
+			mylist = new ArrayList<OverlayItem>();
+
+
+			campusPoints = JSONfunctions.getJSONArrayfromURL(url[0]);
+			//        JSONObject json = JSONfunctions.getJSONfromURL("http://alderamin1.upc.es/estudis_grau.php");
+
+			
+
+
+			return null;
+		}
+		protected void onPostExecute(Long result) {
+			try{
+
+
+				for(int i=0;i<campusPoints.length();i++){						
+					
+					Double latitude = Double.parseDouble(campusPoints.getJSONObject(i).getJSONObject(WS_COORDS).getString(WS_LAT));
+					Double longitude = Double.parseDouble(campusPoints.getJSONObject(i).getJSONObject(WS_COORDS).getString(WS_LON));
+					String name = campusPoints.getJSONObject(i).getString(WS_NOM);
+				//	String city = campusPoints.getJSONObject(i).getString(WS_LOCALITAT);
+			
+					if (latitude != 0 || longitude != 0 ) {
+						
+						GeoPoint myP = new GeoPoint ((int) (latitude * 1E6),(int) (longitude * 1E6));
+
+						mylist.add(new OverlayItem(myP,name, ""));		
+						//Log.e("PUNTS", "Parsejem el punt " + mylat + mylong);
+					}
+				}		
+			}catch(JSONException e)        {
+				Log.e("log_tag", "Error parsing data "+e.toString());
+			}
+
+			// End paste JSON
+
+			mapView = (MapView) findViewById(R.id.mapView);
+			mapView.setBuiltInZoomControls(true);
+
+
+			// MapOverlay mapOverlays = new MapOverlay();
+
+			List<Overlay> listOfOverlays = mapView.getOverlays();
+			listOfOverlays.clear();
+			Drawable drawable = MapsActivity.this.getResources().getDrawable(R.drawable.maps_piu);
+			int dWidth = drawable.getIntrinsicWidth();
+			int dHeight = drawable.getIntrinsicHeight();
+			drawable.setBounds(-24, -48, 24 , +0); //Centrem abaix al mig
+			HomeUpcOverlayItem itemizedoverlay = new HomeUpcOverlayItem (drawable, mapView, getApplicationContext());
+
+
+			int minLat=Integer.MAX_VALUE;
+			int maxLat = Integer.MIN_VALUE;
+			int minLon= Integer.MAX_VALUE;
+			int maxLon= Integer.MIN_VALUE;
+
+			for (int i=0;i<mylist.size();i++) {
+				itemizedoverlay.addOverlay(mylist.get(i));
+				listOfOverlays.add(itemizedoverlay);    
+				maxLat=Math.max(mylist.get(i).getPoint().getLatitudeE6(), maxLat);
+				minLat=Math.min(mylist.get(i).getPoint().getLatitudeE6(), minLat);
+				maxLon=Math.max(mylist.get(i).getPoint().getLongitudeE6(), maxLon);
+				minLon=Math.min(mylist.get(i).getPoint().getLongitudeE6(), minLon);
+
+			}
+			mc = mapView.getController();
+			double fitFactor = 1.5;
+			int spanx = (int) (Math.abs(maxLat - minLat) * fitFactor);
+			int spany = (int)(Math.abs(maxLon - minLon) * fitFactor);
+			
+			if(spanx < 2000){
+				spanx=2000;
+			}
+			if(spany < 2000){
+				spany=2000;
+			}
+			mc.zoomToSpan(spanx,spany);
+			
+			mc.animateTo(new GeoPoint( (maxLat + minLat)/2, 
+					(maxLon + minLon)/2 )); 
+			mapView.postInvalidate();
+
+
+			updateStatus.setVisibility(INVISIBLE);
+		}
+
+
+	}
+
+
+
+
+}

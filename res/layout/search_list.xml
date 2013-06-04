@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/event_list_background"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <include layout="@layout/upcheader_maps" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="399dp"
+        android:layout_weight="2.55"
+        style="@style/unitatCaixa"
+        android:cacheColorHint="#00000000"
+        android:divider="#f2f2f2"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/background_menu_list" />
+
+
+
+    <TextView
+        android:id="@+id/android:empty"
+        android:layout_width="wrap_content"
+        android:layout_height="399dp"
+        android:layout_weight="2.55"
+        android:text="@string/events_nodata" />
+
+    <RelativeLayout
+        android:id="@+id/searchRelLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp" >
+
+        <TextView
+            android:id="@+id/searchLodading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            
+            android:textColor="@android:color/black" />
+
+        <ProgressBar
+            android:id="@+id/searchProgressBar"
+            android:layout_width="wrap_content"
+              style="?android:attr/progressBarStyle"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/searchLodading"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:onClick="submitResults"
+                style="@style/unitatCaixaGris"
+        
+        android:text="@string/button_submit_view" />
+
+</LinearLayout>

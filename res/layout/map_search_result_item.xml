@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="5dip" >
+
+    <TextView
+        android:id="@+id/list_result_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <CheckBox
+        android:id="@+id/list_result_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="6dp"
+        android:clickable="false"
+        android:focusable="true"
+        android:paddingRight="6dip" />
+
+    <TextView
+        android:id="@+id/list_result_title"
+        style="unitatNegretaEstudis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="50dp"
+        android:text="test"
+        android:textColor="#000000" />
+
+</RelativeLayout>

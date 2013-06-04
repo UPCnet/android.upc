@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/events_add_calendar"
+        android:title="@string/events_menu_add_calendar"></item>
+
+</menu>

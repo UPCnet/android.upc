@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UPCmobile</string>
+    <string name="menu_estudis">Studies</string>
+    <string name="menu_videos">Canal UPC</string>
+    <string name="menu_mapes">UPCMaps</string>
+    <string name="menu_esdeveniments">Events</string>
+    <string name="error_events_connection">Can\'t conntact to server</string>
+    <string name="loading">Loading...</string>
+    <string name="load_agenda">Getting appointments</string>
+	<string name="event_location_label">Location:</string>
+	<string name="event_schedule_label1">From </string>
+	<string name="event_schedule_label2"> to </string>
+</resources>

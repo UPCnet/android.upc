@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/IUPC/!svn/ver/33/trunk/iUPC/res/layout
+END
+main.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/main.xml
+END
+edifici_fitxa_single.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/edifici_fitxa_single.xml
+END
+allevents.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/IUPC/!svn/ver/30/trunk/iUPC/res/layout/allevents.xml
+END
+single_list_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/IUPC/!svn/ver/30/trunk/iUPC/res/layout/single_list_item.xml
+END
+estudis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/IUPC/!svn/ver/30/trunk/iUPC/res/layout/estudis.xml
+END
+balloon_overlay.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/balloon_overlay.xml
+END
+upcheader_maps.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/upcheader_maps.xml
+END
+map_search_result_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/map_search_result_item.xml
+END
+map_root_search.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/IUPC/!svn/ver/33/trunk/iUPC/res/layout/map_root_search.xml
+END
+estudis_webkit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/estudis_webkit.xml
+END
+upcheader_events.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/IUPC/!svn/ver/30/trunk/iUPC/res/layout/upcheader_events.xml
+END
+upcheader_main.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/upcheader_main.xml
+END
+map_root.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/IUPC/!svn/ver/30/trunk/iUPC/res/layout/map_root.xml
+END
+map_info_edifici.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/map_info_edifici.xml
+END
+map_info_unitat.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/map_info_unitat.xml
+END
+map_popup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/IUPC/!svn/ver/28/trunk/iUPC/res/layout/map_popup.xml
+END
+detall_event.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/IUPC/!svn/ver/28/trunk/iUPC/res/layout/detall_event.xml
+END
+linebreak_taula.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/linebreak_taula.xml
+END
+upcheader_info_edifici.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/upcheader_info_edifici.xml
+END
+about.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/about.xml
+END
+map_info_campus.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/map_info_campus.xml
+END
+map_overlay.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/map_overlay.xml
+END
+single_list_item_header.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/IUPC/!svn/ver/30/trunk/iUPC/res/layout/single_list_item_header.xml
+END
+list_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/IUPC/!svn/ver/30/trunk/iUPC/res/layout/list_item.xml
+END
+search_list.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/search_list.xml
+END
+upcheader.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/IUPC/!svn/ver/28/trunk/iUPC/res/layout/upcheader.xml
+END
+upcheader_estudis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/IUPC/!svn/ver/38/trunk/iUPC/res/layout/upcheader_estudis.xml
+END
+listplaceholder.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/IUPC/!svn/ver/30/trunk/iUPC/res/layout/listplaceholder.xml
+END
