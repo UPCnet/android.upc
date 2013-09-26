@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>IUPCActivity</name>
+=======
+	<name>iUPC</name>
+>>>>>>> ff1d17ea571f8c32f649ecbca7dfd8dc5465e612
 	<comment></comment>
 	<projects>
 	</projects>
