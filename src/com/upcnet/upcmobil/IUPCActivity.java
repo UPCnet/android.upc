@@ -50,7 +50,7 @@ public class IUPCActivity extends MyActivity {
 		});
 
 		 */
-		LinearLayout videoLayout = (LinearLayout) findViewById(R.id.layoutimg5);
+		LinearLayout videoLayout = (LinearLayout) findViewById(R.id.layoutimg7);
 		videoLayout.setBackgroundResource(R.drawable.background_menu);
 		videoLayout.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -69,7 +69,7 @@ public class IUPCActivity extends MyActivity {
 			}
 		});
 
-		LinearLayout layoutMaps = (LinearLayout) findViewById(R.id.layoutimg4);
+		LinearLayout layoutMaps = (LinearLayout) findViewById(R.id.layoutimg8);
 		layoutMaps.setBackgroundResource(R.drawable.background_menu);
 		layoutMaps.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -155,9 +155,6 @@ public class IUPCActivity extends MyActivity {
 		LinearLayout layoutMasters = (LinearLayout) findViewById(R.id.layoutimg2);
 		layoutMasters.setBackgroundResource(R.drawable.background_menu);
 
-
-
-
 		layoutMasters.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				try {
@@ -192,25 +189,25 @@ public class IUPCActivity extends MyActivity {
 			}
 		});
 
-		
-		LinearLayout layoutAtenea = (LinearLayout) findViewById(R.id.layoutimg6);
+
+		LinearLayout layoutAtenea = (LinearLayout) findViewById(R.id.layoutimg4);
 		layoutAtenea.setBackgroundResource(R.drawable.background_menu);
 
 		layoutAtenea.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				try {
-									if (Utils.isNetworkAvailable(getApplicationContext())){
+					if (Utils.isNetworkAvailable(getApplicationContext())){
 
-					Intent i = new Intent(IUPCActivity.this,EstudisWebkit.class);
+						Intent i = new Intent(IUPCActivity.this,EstudisWebkit.class);
 
-					Bundle bundle = new Bundle();
-					bundle.putString(Utils.PREF_URL, Utils.URL_ATENEA);
-					bundle.putString(Utils.PREF_TITOL, getString(R.string.menu_atenea));
+						Bundle bundle = new Bundle();
+						bundle.putString(Utils.PREF_URL, Utils.URL_ATENEA);
+						bundle.putString(Utils.PREF_TITOL, getString(R.string.menu_atenea));
 
 
-					i.putExtras(bundle);
-					startActivity(i);
-						}
+						i.putExtras(bundle);
+						startActivity(i);
+					}
 					else {
 
 						Toast.makeText(IUPCActivity.this,getResources().getString(R.string.connexion_needed), Toast.LENGTH_LONG).show();
@@ -229,25 +226,25 @@ public class IUPCActivity extends MyActivity {
 
 			}
 		});
-		
+
 		LinearLayout layoutFPC = (LinearLayout) findViewById(R.id.layoutimg3);
 		layoutFPC.setBackgroundResource(R.drawable.background_menu);
 
 		layoutFPC.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				try {
-									if (Utils.isNetworkAvailable(getApplicationContext())){
+					if (Utils.isNetworkAvailable(getApplicationContext())){
 
-					Intent i = new Intent(IUPCActivity.this,EstudisWebkit.class);
+						Intent i = new Intent(IUPCActivity.this,EstudisWebkit.class);
 
-					Bundle bundle = new Bundle();
-					bundle.putString(Utils.PREF_URL, Utils.URL_FPC);
-					bundle.putString(Utils.PREF_TITOL, getString(R.string.header_fpc));
+						Bundle bundle = new Bundle();
+						bundle.putString(Utils.PREF_URL, Utils.URL_FPC);
+						bundle.putString(Utils.PREF_TITOL, getString(R.string.header_fpc));
 
 
-					i.putExtras(bundle);
-					startActivity(i);
-						}
+						i.putExtras(bundle);
+						startActivity(i);
+					}
 					else {
 
 						Toast.makeText(IUPCActivity.this,getResources().getString(R.string.connexion_needed), Toast.LENGTH_LONG).show();
@@ -267,7 +264,80 @@ public class IUPCActivity extends MyActivity {
 			}
 		});
 
+		LinearLayout layoutBiblioteca = (LinearLayout) findViewById(R.id.layoutimg5);
+		layoutBiblioteca.setBackgroundResource(R.drawable.background_menu);
+
+		layoutBiblioteca.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				try {
+					if (Utils.isNetworkAvailable(getApplicationContext())){
+
+						Intent i = new Intent(IUPCActivity.this,EstudisWebkit.class);
+
+						Bundle bundle = new Bundle();
+						bundle.putString(Utils.PREF_URL, Utils.URL_BIB);
+						bundle.putString(Utils.PREF_TITOL, getString(R.string.header_bib));
+
+
+						i.putExtras(bundle);
+						startActivity(i);
+					}
+					else {
+
+						Toast.makeText(IUPCActivity.this,getResources().getString(R.string.connexion_needed), Toast.LENGTH_LONG).show();
+
+
+					}
+				} catch (Exception e) {
+
+					AlertDialog ad = alert.create();
+					ad.setMessage(e.getMessage());
+					ad.show();
+
+
+				}
+
+
+			}
+		});
 		
+		LinearLayout layoutUPComons = (LinearLayout) findViewById(R.id.layoutimg6);
+		layoutUPComons.setBackgroundResource(R.drawable.background_menu);
+
+		layoutUPComons.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				try {
+					if (Utils.isNetworkAvailable(getApplicationContext())){
+
+						Intent i = new Intent(IUPCActivity.this,EstudisWebkit.class);
+
+						Bundle bundle = new Bundle();
+						bundle.putString(Utils.PREF_URL, Utils.URL_UPCOMMONS);
+						bundle.putString(Utils.PREF_TITOL, getString(R.string.header_upcommons));
+
+
+						i.putExtras(bundle);
+						startActivity(i);
+					}
+					else {
+
+						Toast.makeText(IUPCActivity.this,getResources().getString(R.string.connexion_needed), Toast.LENGTH_LONG).show();
+
+
+					}
+				} catch (Exception e) {
+
+					AlertDialog ad = alert.create();
+					ad.setMessage(e.getMessage());
+					ad.show();
+
+
+				}
+
+
+			}
+		});
+
 	}
 
 	// Inflamos el menu About del Main

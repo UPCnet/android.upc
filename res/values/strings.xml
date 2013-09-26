@@ -3,10 +3,15 @@
 
     <string name="app_name">UPC</string>
     <string name="menu_graus">Graus</string>
-        <string name="menu_fpc">Màsters i postgraus de formació permanent</string>
-                <string name="header_fpc">Formació permanent</string>
-            
+    <string name="menu_fpc">Formació permanent</string>
+    <string name="header_fpc">Formació permanent</string>
+        <string name="header_bib">Biblioteca</string>
+    
+            <string name="header_upcommons">UPCommons</string>
+        
     <string name="menu_videos">YouTube UPC</string>
+    <string name="menu_biblioteques">Biblioteca</string>
+    <string name="menu_upc_commons">UPCommons</string>
     <string name="menu_mapes">UPCmaps</string>
     <string name="events_menu_add_calendar">Afegir a l\'agenda</string>
     <string name="menu_esdeveniments">AgendaUPC</string>
@@ -51,17 +56,16 @@
     <string name="error_actualitzant">Error baixant les dades</string>
     <string name="ok_actualitzant">Dades actualitzades correctament</string>
     <string name="connexion_needed">És necessària una connexió a Internet per aquesta funcionalitat</string>
-    <!--    
-         Prod keystore2 URI (clau upc)   -->
-         
-    <string name="google_api_key">0ZcRCYehHH7rcuuBFQ3C9lYwMtjni6xrla3y-VA</string>
-  
+    <!-- Prod keystore2 URI (clau upc) -->
 
-<!--     Prod keystore debug - URI 
-    <string name="google_api_key">0ZcRCYehHH7pZRXT37kglc9V_VNWaV_27x-QdeA</string>-->
+    <string name="google_api_key">0ZcRCYehHH7rcuuBFQ3C9lYwMtjni6xrla3y-VA</string>
+
+    <!--
+         Prod keystore debug - URI 
+    <string name="google_api_key">0ZcRCYehHH7pZRXT37kglc9V_VNWaV_27x-QdeA</string>
+    -->
     <string name="edificiGrauTitol">Graus</string>
-        <string name="edificiMastersTitol">Màsters universitaris</string>
-        
+    <string name="edificiMastersTitol">Màsters universitaris</string>
     <string name="edificiUnitats">Unitats</string>
     <string name="campusGrauTitol">Centres propis</string>
     <string name="campus2nCicleTitol">Centres adscrits</string>
@@ -73,7 +77,7 @@
     <string name="sharelocation">Utilitzar..</string>
     <string name="about_version">versió 1.0</string>
     <string name="about_info">La <b>Universitat Politècnica de Catalunya · BarcelonaTech (UPC)</b> ofereix estudis de grau i màster universitari dels àmbits de l\'arquitectura, les ciències i l\'enginyeria.</string>
-    <string name="about_infolist">- Consulta la informació acadèmica dels estudis UPC per al curs 2012-2013.\n- Utilitza l\'aplicació UPCmaps per arribar als nostres espais.\n- Coneix la nostra activitat  a través dels vídeos.</string>
+    <string name="about_infolist">- Consulta la informació acadèmica dels estudis UPC per al curs 2013-2014.\n- Utilitza l\'aplicació UPCmaps per arribar als nostres espais.\n- Coneix la nostra activitat  a través dels vídeos.</string>
     <string name="about_contacte">Per a qualsevol consulta:\ninfo@upc.edu\n+34 93 401 62 00 \nwww.upc.edu</string>
 
 </resources>

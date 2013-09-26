@@ -18,6 +18,9 @@ import android.net.NetworkInfo;
 
 public class Utils {
 
+	public static String URL_BIB = "http://m.bibliotecnica.upc.edu/home/index.php?app=true";
+	public static String URL_UPCOMMONS = "http://m.bibliotecnica.upc.edu/upcommons/index.php?app=true";
+
 	public static String PREF_URL = "url_inicial";
 	public static String URL_GRAUS = "http://www.upc.edu/grau/graus.php?lang=ca";
 	public static String URL_MASTERS = "http://www.upc.edu/master/masters.php?lang=ca";
